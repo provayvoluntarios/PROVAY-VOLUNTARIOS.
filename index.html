@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROVAY - Voluntariado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN SUPERIOR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">PROVAY</a>
+      <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#registro">Registrarme</a>
+        <a href="#registro">Disponibilidad</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECCIÓN HERO -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
+        <span class="subtitle">VOLUNTARIADO PROVAY</span>
+        <h1>Tu tiempo puede transformar vidas.</h1>
+        <p>Registra tu disponibilidad, encuentra actividades y forma parte de los proyectos de PROVAY.</p>
+        <a href="#registro" class="btn-primary">Quiero ser voluntario</a>
+      </div>
+
+      <div class="hero-card">
+        <div class="card-icon">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </div>
+        <h3>Haz la diferencia</h3>
+        <p>Conecta tu tiempo y tus habilidades con quienes más lo necesitan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN FORMULARIO DE REGISTRO -->
+  <section id="registro" class="form-section-container">
+    <div class="register-container">
+      <header class="form-header">
+        <span class="badge">ÚNETE HOY</span>
+        <h2>Registro de Voluntario</h2>
+        <p>Ingresa tus datos personales y selecciona los horarios en que podrías colaborar.</p>
+      </header>
+
+      <form id="volunteerForm">
+        <!-- BLOQUE HORIZONTAL 1: DATOS & PERFIL -->
+        <div class="form-grid-horizontal">
+          
+          <!-- DATOS PERSONALES -->
+          <div class="form-card-block">
+            <div class="block-title">
+              <span class="step-num">1</span>
+              <h3>Datos Personales</h3>
+            </div>
+
+            <div class="input-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej. María López Pérez" required>
+            </div>
+
+            <div class="grid-2">
+              <div class="input-group">
+                <label for="edad">Edad *</label>
+                <input type="number" id="edad" name="edad" min="12" max="99" placeholder="Ej. 21" required>
+              </div>
+
+              <div class="input-group">
+                <label for="celular">NUMERO CEL. *</label>
+                <input type="tel" id="celular" name="celular" placeholder="Ej. 6441234567" required>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+            </div>
+          </div>
+
+          <!-- PERFIL Y HABILIDADES -->
+          <div class="form-card-block">
+            <div class="block-title">
+              <span class="step-num">2</span>
+              <h3>Perfil y Habilidades</h3>
+            </div>
+
+            <div class="input-group">
+              <label for="area">Área de Apoyo o Taller *</label>
+              <select id="area" name="area" required>
+                <option value="" disabled selected>Selecciona una opción...</option>
+                <option value="Robótica y Tecnología">Robótica y Tecnología</option>
+                <option value="Arte y Pintura">Arte y Pintura</option>
+                <option value="Deportes y Recreación">Deportes y Recreación</option>
+                <option value="Apoyo Escolar / Regularización">Apoyo Escolar / Regularización</option>
+                <option value="Logística y Eventos">Logística y Eventos</option>
+                <option value="Salud y Nutrición">Salud y Nutrición</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="notas">Habilidades o experiencia relevante</label>
+              <textarea id="notas" name="notas" rows="3" placeholder="Cuéntanos brevemente sobre tus conocimientos..."></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BLOQUE 2: DISPONIBILIDAD HORIZONTAL -->
+        <div class="form-card-block full-width">
+          <div class="block-title">
+            <span class="step-num">3</span>
+            <div>
+              <h3>Disponibilidad y Horarios</h3>
+              <p class="section-sub">Activa los días que puedes apoyar e indica tus horas disponibles:</p>
+            </div>
+          </div>
+
+          <div class="days-schedule-grid">
+            
+            <!-- LUNES -->
+            <div class="day-schedule-card">
+              <label class="day-toggle">
+                <input type="checkbox" class="day-check" data-day="Lunes" onchange="toggleDayHours(this)">
+                <span class="day-name">Lunes</span>
+              </label>
+              <div class="hours-inputs disabled">
+                <div>
+                  <span class="time-label">De</span>
+                  <input type="time" class="time-start" value="16:00" disabled>
+                </div>
+                <div>
+                  <span class="time-label">A</span>
+                  <input type="time" class="time-end" value="18:00" disabled>
+                </div>
+              </div>
+            </div>
+
+            <!-- MARTES -->
+            <div class="day-schedule-card">
+              <label class="day-toggle">
+                <input type="checkbox" class="day-check" data-day="Martes" onchange="toggleDayHours(this)">
+                <span class="day-name">Martes</span>
+              </label>
+              <div class="hours-inputs disabled">
+                <div>
+                  <span class="time-label">De</span>
+                  <input type="time" class="time-start" value="16:00" disabled>
+                </div>
+                <div>
+                  <span class="time-label">A</span>
+                  <input type="time" class="time-end" value="18:00" disabled>
+                </div>
+              </div>
+            </div>
+
+            <!-- MIÉRCOLES -->
+            <div class="day-schedule-card">
+              <label class="day-toggle">
+                <input type="checkbox" class="day-check" data-day="Miércoles" onchange="toggleDayHours(this)">
+                <span class="day-name">Miércoles</span>
+              </label>
+              <div class="hours-inputs disabled">
+                <div>
+                  <span class="time-label">De</span>
+                  <input type="time" class="time-start" value="16:00" disabled>
+                </div>
+                <div>
+                  <span class="time-label">A</span>
+                  <input type="time" class="time-end" value="18:00" disabled>
+                </div>
+              </div>
+            </div>
+
+            <!-- JUEVES -->
+            <div class="day-schedule-card">
+              <label class="day-toggle">
+                <input type="checkbox" class="day-check" data-day="Jueves" onchange="toggleDayHours(this)">
+                <span class="day-name">Jueves</span>
+              </label>
+              <div class="hours-inputs disabled">
+                <div>
+                  <span class="time-label">De</span>
+                  <input type="time" class="time-start" value="16:00" disabled>
+                </div>
+                <div>
+                  <span class="time-label">A</span>
+                  <input type="time" class="time-end" value="18:00" disabled>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIERNES -->
+            <div class="day-schedule-card">
+              <label class="day-toggle">
+                <input type="checkbox" class="day-check" data-day="Viernes" onchange="toggleDayHours(this)">
+                <span class="day-name">Viernes</span>
+              </label>
+              <div class="hours-inputs disabled">
+                <div>
+                  <span class="time-label">De</span>
+                  <input type="time" class="time-start" value="16:00" disabled>
+                </div>
+                <div>
+                  <span class="time-label">A</span>
+                  <input type="time" class="time-end" value="18:00" disabled>
+                </div>
+              </div>
+            </div>
+
+            <!-- SÁBADO -->
+            <div class="day-schedule-card">
+              <label class="day-toggle">
+                <input type="checkbox" class="day-check" data-day="Sábado" onchange="toggleDayHours(this)">
+                <span class="day-name">Sábado</span>
+              </label>
+              <div class="hours-inputs disabled">
+                <div>
+                  <span class="time-label">De</span>
+                  <input type="time" class="time-start" value="09:00" disabled>
+                </div>
+                <div>
+                  <span class="time-label">A</span>
+                  <input type="time" class="time-end" value="13:00" disabled>
+                </div>
+              </div>
+            </div>
+
+            <!-- DOMINGO -->
+            <div class="day-schedule-card">
+              <label class="day-toggle">
+                <input type="checkbox" class="day-check" data-day="Domingo" onchange="toggleDayHours(this)">
+                <span class="day-name">Domingo</span>
+              </label>
+              <div class="hours-inputs disabled">
+                <div>
+                  <span class="time-label">De</span>
+                  <input type="time" class="time-start" value="09:00" disabled>
+                </div>
+                <div>
+                  <span class="time-label">A</span>
+                  <input type="time" class="time-end" value="13:00" disabled>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="submit-button">Completar Mi Registro</button>
+      </form>
+
+      <!-- MENSAJE DE ÉXITO -->
+      <div id="successMessage" class="success-card" style="display: none;">
+        <h2>🎉 ¡Registro exitoso!</h2>
+        <p>Gracias por sumarte a <strong>PROVAY</strong>. Tus datos han sido guardados correctamente.</p>
+        <button class="submit-button" onclick="resetForm()" style="margin-top: 20px; max-width: 300px;">Registrar a otra persona</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
